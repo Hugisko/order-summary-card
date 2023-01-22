@@ -1,0 +1,175 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+:root {
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+    color: var(--Bright-blue);
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: var(--Pale-blue);
+    display: grid;
+    place-items: center;
+    min-height: 100%;
+}
+
+.card {
+    margin-top: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    min-width: 300px;
+    max-width: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 15px 30px hsla(245, 75%, 52%, 0.1);
+}
+
+.top-card > img{
+    width: 100%;  
+}
+
+.main-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.main-card > h1 {
+    color: var(--Dark-blue);
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.main-card > p {
+    text-align: center;
+    font-weight: 500;
+    color: var(--Desaturated-blue);
+    margin: 0 .6rem;
+}   
+
+.price-per-year {
+    background-color: var(--Very-pale-blue);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem;
+    width: 100%;
+    font-size: .85rem;
+    border-radius: 12px;
+}
+
+.year {
+    color: var(--Dark-blue);
+    font-weight: 900;
+}
+
+.price {
+    color: var(--Desaturated-blue);
+    font-weight: 500;
+}
+
+.price-per-year > a {
+    margin-left: auto;
+    margin-right: .5rem;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.price-per-year > a:is(:hover,:active){
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.bottom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: .9375rem;
+    margin: 0 1.5rem 1rem 1.5rem;
+}
+
+.payment {
+    background-color: var(--Bright-blue);
+    color: white;
+    padding: .8rem 2rem;
+    margin-bottom: .5rem;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px hsla(245, 75%, 52%, 0.4);
+}
+
+.cancel {
+    color: var(--Desaturated-blue);
+    margin: 1.3rem 0;
+}
+
+.payment:is(:hover,:active){
+    opacity: 0.7;
+    transition: opacity ease-in-out .3s;
+}
+
+.cancel:is(:hover,:active){
+    color: var(--Dark-blue);
+}
+
+footer {
+    margin-top: auto;
+}
+
+@media (min-width: 500px){
+    body {
+        background-image: url("./images/pattern-background-desktop.svg");
+    }
+
+    .main-card {
+        padding: 2.8rem;
+    }
+
+    .bottom-card {
+        margin: 0 2.8rem 1rem 2.8rem;
+    }
+}
+
